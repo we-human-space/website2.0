@@ -1,0 +1,55 @@
+<div class="article">
+
+  <div class="postIMG">
+    <div class="imgWIDER750PX">
+      <!---PLEASE DELETE THE IMG CLASS YOU WON'T USE--->
+      {{#if feature_image}}
+        <a href="{{url}}"><img src="{{feature_image}}" alt=""></a>{{!else}}
+      {{/if}}
+      <div class="upper1024">
+        <div class="overlayPlacement">
+
+          <a href="{{url}}" class="superAnchor">
+            <div class="anchorPLACEMENT">
+              <div class="articleTITLE">
+                <div class="articleTitlePLACEMENT">
+                  <h1>{{title}}</h1>
+                </div>
+              </div>
+              <div class="articleSUMMARY">
+                <div class="articleSummaryPLACEMENT">
+                  {{#if custom}}
+                    <h4>No. {{custom.number}}</h4>
+                  {{else}}
+                    <h4>No. {{id}}</h4>
+                  {{/if}}
+                </div>
+              </div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="lower1024">
+    <div class="postData">
+      <div class="postTitle">
+        <a href="{{url}}"><h1>{{title}}</h1></a>
+      </div>
+      <div class="post">
+          <div class="articleSUMMARY">
+            <div class="articleSummaryPLACEMENT">
+              {{#if custom}}
+                <h4>No. {{custom.number}}</h4>
+              {{else}}
+                <h4>No. {{id}}</h4>
+              {{/if}}
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+</div>

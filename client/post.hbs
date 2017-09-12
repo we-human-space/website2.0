@@ -1,0 +1,33 @@
+{{!< default}}
+
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+
+{{#post}}
+
+<div class="articleIMG">
+  <div class="articleImgPlacementLESS750PX">
+    <img src="{{feature_image}}" alt="">
+    {{#if custom}}
+      <span class="imgSubtitle">{{custom.image_subtitle}}</span>
+    {{/if}}
+  </div>
+</div>
+
+<div class="articleData">
+  <div class="articleDataPlacement">
+    <div class="postCategories">
+      <span class="rainbow">Weekly Dose No. {{#if custom}}{{custom.number}}{{else}}{{id}}{{/if}} // {{date format="MMMM Do"}}</span>
+    </div>
+    <div class="postTitle">
+      <a href="#"><h1><p></p>{{title}}</h1></a>
+    </div>
+    <div class="text">
+      {{content}}
+      {{> "post-footer"}}
+    </div>
+  </div>
+</div>
+
+{{/post}}

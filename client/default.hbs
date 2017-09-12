@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--
+    __________      _____                   ______
+    ___  ____/___  ___  /____  ________________  /____________  __
+    __  /_   _  / / /  __/  / / /_  ___/  _ \_  __ \  __ \_  / / /
+    _  __/   / /_/ // /_ / /_/ /_  /   /  __/  /_/ / /_/ /  /_/ /
+    /_/      \__,_/ \__/ \__,_/ /_/    \___//_.___/\____/_\__, /
+                                                         /____/
+    -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale = 1.0 maximum-scale=1.0 user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    {{#is "index"}}<title>Archives</title>{{/is}}
+    {{#is "post"}}
+      <title>
+        {{#if custom}}
+          No. {{custom.number}}
+        {{else}}
+          No. {{id}}
+        {{/if}}
+      </title>
+    {{/is}}
+
+    {{ghost_head}}
+    <!-- Hotjar Tracking Code for www.maat.space -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:481929,hjsv:5};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+    <link rel="stylesheet" href="{{asset "css/normalize.css"}}">
+    {{#is "index"}}<link rel="stylesheet" href="{{asset "css/weeklydosedelivery.css"}}">{{/is}}
+    {{#is "post"}}<link rel="stylesheet" href="{{asset "css/issues.css"}}">{{/is}}
+    <link rel="stylesheet" href="{{asset "css/fonts.css"}}">
+</head>
+<body>
+  {{{body}}}
+  {{ghost_foot}}
+</body>
+</html>
