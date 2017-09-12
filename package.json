@@ -8,14 +8,15 @@
   "license": "GPL-3.0",
   "private": true,
   "scripts": {
-    "build": "npm run clean && npm run fonts && client/assets/fonts mkdir ghost && cd ghost && ghost install local && mkdir content/themes/humanspace && ncp ../client/* content/themes/humanspace",
+    "build": "npm run clean && npm run fonts && mkdirp ghost && cd ghost && ghost install local && ncp ../client content/themes/humanspace && ghost restart",
     "clean": "rimraf ghost && rimraf client/assets/fonts",
-    "fonts": "mkdir client/assets/fonts && ncp .assets/futura client/assets/fonts",
+    "fonts": "mkdirp client/assets/fonts/futura && ncp .assets/futura client/assets/fonts/futura",
     "restart": "cd ghost && ghost restart",
     "start": "cd ghost && ghost start --development",
     "stop": "cd ghost && ghost stop"
   },
   "dependencies": {
+    "mkdirp": "^0.5.1",
     "ncp": "^2.0.0",
     "rimraf": "^2.6.2"
   }
